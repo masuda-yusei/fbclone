@@ -21,6 +21,9 @@
       <%= link_to "Sign up", new_user_path %>
       <%= link_to "Login", new_session_path %>
     <% end %>
+    <% if logged_in? %>
+      <p class="login">Logged in as <strong> <%= link_to current_user.name, user_path(current_user.id) %></strong></p>
+    <% end %>
     <%= yield %>
   </nav>
   </body>
