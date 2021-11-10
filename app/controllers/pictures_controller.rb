@@ -1,5 +1,6 @@
 class PicturesController < ApplicationController
   before_action :set_picture, only: %i[ show edit update destroy ]
+  skip_before_action :login_required, only: [:index, :show]
 
   # GET /pictures or /pictures.json
   def index
