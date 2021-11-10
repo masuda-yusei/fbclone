@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
-  root 'tops#index'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :users
+  resources :pictures do
+    collection do
+      post :confirm
+    end
+  end
+  resources :sessions
+  resources :favorites
 end
